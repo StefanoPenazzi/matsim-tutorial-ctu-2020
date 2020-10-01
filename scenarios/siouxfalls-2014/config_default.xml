@@ -66,18 +66,21 @@
 			<param name="marginalUtilityOfTraveling_util_hr" value="0.0" />
 			<param name="constant" value="-0.562"/>
 			<param name="monetaryDistanceRate" value="-0.0004"/>
+                        <param name="dailyUtilityConstant" value="-0.0004"/>
 		</parameterset>
 		<parameterset type="modeParams">
 			<param name="mode" value="pt"/>
 			<param name="marginalUtilityOfTraveling_util_hr" value="-0.18" />
 			<param name="monetaryDistanceRate" value="0.0"/>
 			<param name="constant" value="-0.124"/>
+			<param name="dailyUtilityConstant" value="-0.0004"/>
 		</parameterset>
 		<parameterset type="modeParams">
 			<param name="mode" value="walk"/>
 			<param name="marginalUtilityOfTraveling_util_hr" value="-1.14" />
 			<param name="constant" value="0.0"/>
 			<param name="marginalUtilityOfDistance_util_m" value="0.0"/>
+                        <param name="dailyUtilityConstant" value="-0.0004"/>
 		</parameterset>
 
 		<parameterset type="activityParams">

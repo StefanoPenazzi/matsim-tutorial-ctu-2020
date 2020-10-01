@@ -22,9 +22,12 @@ import org.matsim.api.core.v01.Scenario;
 import org.matsim.contrib.otfvis.OTFVisLiveModule;
 import org.matsim.core.config.Config;
 import org.matsim.core.config.ConfigUtils;
+import org.matsim.core.controler.AbstractModule;
 import org.matsim.core.controler.Controler;
 import org.matsim.core.controler.OutputDirectoryHierarchy;
 import org.matsim.core.scenario.ScenarioUtils;
+import org.matsim.core.scoring.ScoringFunctionFactory;
+import org.matsim.ctu2020.Ctu2020ScoringFunctionFactory;
 
 /**
  * @author nagel
@@ -56,8 +59,12 @@ public class RunMatsim{
 		
 		// possibly modify controler here
 
-		//controler.addOverridingModule( new OTFVisLiveModule() ) ;
-		
+		controler.addOverridingModule(new AbstractModule() {
+            @Override
+            public void install() {
+                bind(ScoringFunctionFactory.class).to(Ctu2020ScoringFunctionFactory.class);
+            }
+        });
 		// ---
 		
 		controler.run();
