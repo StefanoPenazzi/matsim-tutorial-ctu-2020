@@ -78,7 +78,7 @@ public class Ctu2020ScoringFunctionFactory implements ScoringFunctionFactory {
 		 * 
 		 * If this component scores a leg
 		 *(Always check the default CharyparNagelActivityScoring or CharyparNagelLegScoring
-		 *to be sure what interfaces the class has to implements)
+		 *to be sure what interfaces the class has to implement)
 		 * 
 		 * In this example CharyparNagelLegScoring has been replaced with Ctu2020LegScoring
 		 * All the others components are the same used in the default version

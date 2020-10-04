@@ -21,6 +21,7 @@ import org.matsim.core.utils.misc.Time;
  * @author stefanopenazzi
  *
  */
+
 public class Ctu2020LegScoring implements org.matsim.core.scoring.SumScoringFunction.LegScoring, org.matsim.core.scoring.SumScoringFunction.ArbitraryEventScoring { {
 
 }
