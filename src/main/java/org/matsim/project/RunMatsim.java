@@ -58,7 +58,28 @@ public class RunMatsim{
 		Controler controler = new Controler( scenario ) ;
 		
 		// possibly modify controler here
-
+		
+		/* After that a new Controler is created, it is possible
+		 * to make the override of the default modules by using the 
+		 * method addOverridingModule provided by the Controler.
+		 * addOverridingModule requires as an input parameter an object
+		 * of type AbstractModule. 
+		 * In the following code, a new object of type AbstractModule
+		 * is directly created as a parameter of addOverridingModule.
+		 * It is important to @Override the method install of the class 
+		 * AbstractModule adding the necessary bind.
+		 * Several bind can be added inside the install method (in the
+		 * example only one is used).
+		 * In this case 
+		 * bind(ScoringFunctionFactory.class).to(Ctu2020ScoringFunctionFactory.class);
+		 * replaces the default bind 
+		 * bind(ScoringFunctionFactory.class).to(CharyparNagelScoringFunctionFactory.class);
+		 * 
+		 * Because of this bind, every time the interface ScoringFunctionFactory 
+		 * is used as a parameter in a class constructor annotated with @Inject
+		 * the implementation Ctu2020ScoringFunctionFactory will be used.
+		 *  */
+		
 		controler.addOverridingModule(new AbstractModule() {
             @Override
             public void install() {
